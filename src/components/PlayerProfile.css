@@ -1,0 +1,43 @@
+.player-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.mlb-logo {
+  width: 180px; /* example size */
+  height: 180px;
+  object-fit: contain;
+  opacity: 0.25;
+  z-index: 1;
+}
+
+.player-photo {
+  position: absolute;
+  top: 48%;
+  left: 34%;
+  height: 92px; /* same as mlb-logo height */
+  width: auto;   /* keep aspect ratio */
+  transform: translate(-50%, -50%); /* center both vertically & horizontally */
+  object-fit: cover;
+  z-index: 2;
+}
+
+
+.player-name {
+  margin-top: -4.7rem;
+  font-size: 1.2rem;
+  color: #000000;
+  z-index: 3;
+  font-style: italic;
+  font-weight: 1000;
+  -webkit-text-stroke: .6px rgb(224, 224, 224); /* main outline */
+}
+
+

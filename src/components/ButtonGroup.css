@@ -1,0 +1,29 @@
+.button-group-base {
+  background-color: rgb(166, 166, 166);
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  display: inline;
+  padding: 6px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  height: 38px;
+}
+
+.button-group-active {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-style: italic;
+  font-weight: 900;
+  border: 3px solid rgb(72, 72, 72);
+
+}
+
+.button-group-hover:hover {
+  background-color: rgb(100, 100, 100);
+}
+
+.button-group-container {
+  white-space: nowrap; 
+}

@@ -1,0 +1,27 @@
+.scorecard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  padding: 20px;
+  width: 150px;
+}
+
+.scorecard-title {
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.scorecard-box {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border: 1.75px solid #6d6d6d;
+  min-width: 60px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}

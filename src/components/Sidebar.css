@@ -1,0 +1,103 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: #424346;
+  color: white;
+  width: 22vh;
+  transition: width 0.3s ease;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.sidebar.collapsed {
+  width: 40px;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: .9rem;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.menu-item {
+  margin: 0.5rem 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  padding-left: 10px;
+}
+
+.menu-item:hover {
+  background-color: #ff5151;
+  border-radius: 4px;
+}
+
+
+.sub-section {
+  background-color: #000000;
+  border-left: 2px solid #fb6161;
+  margin: 0.2rem 0 .5rem 0.45rem;
+  padding: 0.4rem;
+  border-radius: 4px;
+}
+
+.sidebar-content {
+    padding-right: 8px;
+}
+
+.sidebar-section {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.sidebar-section label {
+  font-size: 0.9rem;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.sidebar-section select,
+.sidebar-section input[type="date"] {
+  background-color: #424346;
+  color: white;
+  border: 1px solid #7c7c7c;
+  border-radius: 4px;
+  padding: 0.4rem;
+}
+
+.sidebar-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 0;
+}
+
+.logo-img {
+  width: 90%;
+  height: auto;
+  transition: all 0.3s ease;
+  margin-top: -12px;
+}
+
+.sidebar.collapsed .logo-img {
+  width: 40px; 
+}
+
+#open-close-arrow {
+  font-size: 0.7rem;
+}
