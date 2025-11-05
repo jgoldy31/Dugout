@@ -9,7 +9,7 @@ This dashboard is organized into three main tabs, each focusing on a different a
 
 ### 1. Arsenal Overview
 **Description:**  
-Provides a high-level view of a pitcher’s performance history by displaying a summary table, pitch movement chart, and heatmaps depicting the location tencies by pitch type. This tab also allows for quick filtering of count-types and platoon splits.
+Provides a high-level view of a pitcher’s performance history by displaying a summary table, pitch movement chart, and heatmaps depicting the location tencies by pitch type. This tab also allows for quick filtering of count-types and platoon splits. Currently, dummy-data is displayed for Delivery Consistency, Movement Efficiency, Stuff, and Locations. In the future, these could be pre-computed metrics, giving users an immediate high-level understanding of a pitcher's strengths and weaknesses.
 
 **Future Ideas:**  
 - Add additional metrics to summary table (wOBA, HH/BIP, Swing%, Chase%, etc.) 
