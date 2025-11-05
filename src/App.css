@@ -134,3 +134,36 @@
   margin-right: 5%;        
 }
 
+
+.loading-text {
+  font-style: italic;
+  color: transparent;
+  background: linear-gradient(
+    90deg,
+    #5d5d5d 0%,
+    #c5c5c5 40%,
+    #dcdcdc 50%,
+    #c5c5c5  60%,
+    #5d5d5d 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shimmer 4s linear infinite;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-size: 20px;
+   white-space: nowrap;
+  overflow: visible;
+  text-overflow: unset;
+
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}

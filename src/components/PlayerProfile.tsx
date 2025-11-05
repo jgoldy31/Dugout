@@ -1,3 +1,4 @@
+// Player profile card, top left
 import "./PlayerProfile.css";
 import mlbLogo from "../images/mlb_logo.png";
 
@@ -10,7 +11,7 @@ export default function PlayerProfile({ playerPhoto, playerName }: PlayerProfile
   if (!playerPhoto) return null;
 
   const nameDict: { [key: string]: string } = {
-    "P00001": "Felix Hernandez",
+    "P00001": "Felix Bautista",
   };
    
   const displayName = nameDict[playerName] || playerName;

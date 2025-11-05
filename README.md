@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+# Dugout Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This Dashboard is a small version of a potential framework to allow for pitcher analysis for a variety of audiences (Coaches, Front Office Staff, Analysts). While the present project only contains data for a single piture, the dashboard could be expanded to dynamically display content for multiple pitchers. Below, I will describe the content as well as ideas for future improvements.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Overview
+This dashboard is organized into three main tabs, each focusing on a different aspect of pitching data:
 
-## React Compiler
+### 1. Arsenal Overview
+**Description:**  
+Provides a high-level view of a pitcher’s performance history by displaying a summary table, pitch movement chart, and heatmaps depicting the location tencies by pitch type. This tab also allows for quick filtering of count-types and platoon splits.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Future Ideas:**  
+- Add additional metrics to summary table (wOBA, HH/BIP, Swing%, Chase%, etc.) 
+- BIP charts - Individual Pitches and mapped landing coordinates
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 2. Mechanics Summary
+**Description:**  
+Provides basic information of pitcher's mechanics, along with time-series plot allowing for user investigation. Namely, front-view and side-view release plots split by pitch type and a custom time-series plots of corresponding metrics.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**Future Ideas:**  
+- Normalizing release tendencies relative to MLB average.
+- Expanding the set of metrics for time series plots to all applicable metrics
+- Flagging system that automatically informs users of standout changes to mechanics
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 3. Individual-Pitch Analysis
+**Description:**  
+Using the time-series data provided, allows the user to view the frame-by-frame trend for any pitch within the selected date range.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**Future Ideas:**  
+- Ability to layer multiple pitches at once
+- Using additional data, coupling the time-series data with 3D stick figures.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Getting Started
+
+1. **Clone the repository:**  
+   ```bash
+   git clone https://github.com/jgoldy31/Dugout.git
+cd into cloned directory
+2. **Install Dependencies**  
+npm install 
+
+3. **Add in Data (too large for git)**  
+copy provided json files to /Users/jgoldsher/dugout/dugout/src/data
+
+4. **Run the Code!**
+npm run dev
+
+5. **Open In Browser**
+http://localhost:5173/

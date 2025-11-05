@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ArsenalOverview from "./ArsenalOverview";
 import Mechanics from "./Mechanics";
-import ThreeD from "./ThreeD";
+import IndivPitch from "./IndivPitch";
 
 interface SubTabsProps {
   playerName?: string;
@@ -10,7 +10,7 @@ interface SubTabsProps {
 }
 
 export default function SubTabs({ playerName, startDate, endDate }: SubTabsProps) {
-  const tabs = ["Arsenal Overview", "Mechanics", "3D"];
+  const tabs = ["Arsenal Overview", "Mechanics Summary", "Individual-Pitch Analysis"];
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
   const renderContent = () => {
@@ -23,10 +23,14 @@ export default function SubTabs({ playerName, startDate, endDate }: SubTabsProps
             endDate={endDate}
           />
         );
-      case "Mechanics":
-        return <Mechanics playerName={playerName} />;
-      case "3D":
-        return <ThreeD playerName={playerName} />;
+      case "Mechanics Summary":
+        return <Mechanics playerName={playerName}
+         startDate={startDate}
+            endDate={endDate} />;
+      case "Individual-Pitch Analysis":
+        return <IndivPitch playerName={playerName}
+         startDate={startDate}
+            endDate={endDate} />;
       default:
         return null;
     }

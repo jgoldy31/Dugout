@@ -1,3 +1,4 @@
+// Pitch heatmap with Gausiasian KDE
 import React, { useEffect, useRef, useState } from "react";
 import { STRIKE_ZONE } from "../constants/plotConstants";
 import {
@@ -15,12 +16,12 @@ interface Pitch {
 
 interface PitchHeatmapProps {
   pitches: Pitch[];
-  sigma?: number; // relative smoothing factor (0.3 = 30% of total range)
-  gridSize?: number; // base grid density
+  sigma?: number; 
+  gridSize?: number;
   maxColor?: string;
 }
 
-// Create image once outside the component
+
 const plateImg = new Image();
 plateImg.src = home_plate;
 
@@ -34,7 +35,7 @@ export default function PitchHeatmap({
   const containerRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ width: 370, height: 550 });
 
-  // Maintain aspect ratio based on logical coordinate system
+
   useEffect(() => {
     const aspectRatio =
       (LOCATION_Y_END - LOCATION_Y_START) /
@@ -61,17 +62,17 @@ export default function PitchHeatmap({
     const ctx = canvasRef.current?.getContext("2d");
     if (!ctx) return;
 
-    // --- Clear canvas ---
+
     ctx.clearRect(0, 0, width, height);
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, width, height);
 
-    // --- Domain setup ---
+ 
     const xRange = LOCATION_X_END - LOCATION_X_START;
     const yRange = LOCATION_Y_END - LOCATION_Y_START;
     const aspect = yRange / xRange;
 
-    // Grid scaling consistent with coordinate aspect
+
     const gridSizeX = gridSize;
     const gridSizeY = Math.round(gridSize * aspect);
 
@@ -82,7 +83,7 @@ export default function PitchHeatmap({
     const xStep = xRange / gridSizeX;
     const yStep = yRange / gridSizeY;
 
-    // --- Scaled Gaussian kernel (Fix #2) ---
+    //Gausian
     const sigmaX = sigma * xRange;
     const sigmaY = sigma * yRange;
 
@@ -91,7 +92,7 @@ export default function PitchHeatmap({
         -((dx * dx) / (2 * sigmaX * sigmaX) + (dy * dy) / (2 * sigmaY * sigmaY))
       );
 
-    // --- Populate KDE grid ---
+    //KDE
     for (const p of pitches) {
       for (let i = 0; i < gridSizeX; i++) {
         const x = LOCATION_X_START + i * xStep;
@@ -102,12 +103,12 @@ export default function PitchHeatmap({
       }
     }
 
-    // --- Normalize values ---
+   
     let maxVal = 0;
     for (const row of grid)
       for (const val of row) if (val > maxVal) maxVal = val;
 
-    // --- Convert hex color ---
+    //Assign Hex Value based on Max color
     const hexToRgb = (hex: string) => {
       let c = hex.replace("#", "");
       if (c.length === 3) c = c.split("").map((x) => x + x).join("");
@@ -116,7 +117,7 @@ export default function PitchHeatmap({
     };
     const [maxR, maxG, maxB] = hexToRgb(maxColor);
 
-    // --- Render to canvas ---
+  
     const imgData = ctx.createImageData(width, height);
     const scaleX = gridSizeX / width;
     const scaleY = gridSizeY / height;
@@ -158,7 +159,7 @@ export default function PitchHeatmap({
 
     ctx.putImageData(imgData, 0, 0);
 
-    // --- Draw strike zone ---
+    //Add strike zone and plate image
     const sx =
       ((STRIKE_ZONE.x - LOCATION_X_START) / xRange) * width;
     const sy =

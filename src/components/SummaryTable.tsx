@@ -13,7 +13,7 @@ interface SummaryRow {
 
 interface SummaryTableProps {
   data: SummaryRow[];
-  colors?: Record<string, string>; // e.g., { "4S": "red", CH: "yellow", ... }
+  colors?: Record<string, string>; 
 }
 
 export default function SummaryTable({ data, colors }: SummaryTableProps) {

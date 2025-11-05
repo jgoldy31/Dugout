@@ -1,3 +1,4 @@
+// ArsenalOverview.tsx - Usage Table, Movement Plot, Heatmaps
 import React, { useMemo } from "react";
 import { useBiomechData } from "../hooks/biomechHooks";
 import { summarizePitches } from "../utils/pitchTable";
@@ -57,7 +58,7 @@ export default function ArsenalOverview({ playerName, startDate, endDate }: Arse
     <div className="arsenal-overview-container">
       {scatterData.length > 0 ? (
         <div className="arsenal-main">
-          {/* Left: SimpleScatter */}
+          {/* Left Panel - Overview Table and Movement Plot*/}
           <div className="arsenal-left">
             <div className="button-groups">
               <HandednessButton value={selectedHandedness} onChange={setSelectedHandedness} />
@@ -68,7 +69,7 @@ export default function ArsenalOverview({ playerName, startDate, endDate }: Arse
             <SimpleScatter data={scatterData} />
           </div>
 
-          {/* Right: Pitch heatmaps */}
+          {/* Right Panel: Pitch heatmaps */}
           <div className="arsenal-right">
             
             {pitchTypes.map((type, index) => {

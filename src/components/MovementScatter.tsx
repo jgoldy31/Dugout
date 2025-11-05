@@ -1,3 +1,4 @@
+// Pitch Movement plot with Ellipse norms
 import React from "react";
 import {
   ScatterChart,
@@ -87,7 +88,7 @@ export default function SimpleScatter({
     return () => ro.disconnect();
   }, []);
 
-  // Inner margins to align ellipses with Recharts scatter points
+
   const innerMargin = { left: 60, right: 10, top: 10, bottom: 25 };
   const innerWidth = containerSize ? containerSize.width - innerMargin.left - innerMargin.right : 0;
   const innerHeight = containerSize ? containerSize.height - innerMargin.top - innerMargin.bottom : 0;
@@ -99,7 +100,7 @@ export default function SimpleScatter({
     const rx = (x - xMin) / (xMax - xMin);
     const ry = (y - yMin) / (yMax - yMin);
     const px = innerMargin.left + rx * innerWidth;
-    const py = innerMargin.top + (1 - ry) * innerHeight; // invert y for SVG
+    const py = innerMargin.top + (1 - ry) * innerHeight; 
     return { px, py };
   }
 
@@ -164,7 +165,7 @@ export default function SimpleScatter({
       fill="none"
       stroke={eb.color}
       strokeWidth={2}
-      strokeDasharray="4 4" // <-- this creates a dotted line
+      strokeDasharray="4 4" 
     />
   );
 })}

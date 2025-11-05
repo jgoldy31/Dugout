@@ -5,13 +5,19 @@
   border-radius: 10px;
   padding: 20px;
   width: 150px;
+  position: relative;
+  cursor: default;
 }
 
 .scorecard-title {
   margin-bottom: 10px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 800;
   line-height: 18px;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: unset;
+  font-style: italic;
 }
 
 .scorecard-box {
@@ -24,4 +30,49 @@
   min-width: 60px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Tooltip styling */
+.scorecard[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 20%; /* directly above card */
+  left: 50%;
+  transform: translateX(-90%) translateY(0); /* start position */
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  max-width: 320px;
+  width: 320px;
+  white-space: normal; /* allow wrapping */
+  word-wrap: break-word;
+  text-align: center;
+  opacity: 0; /* hidden by default */
+  pointer-events: none;
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+  z-index: 10;
+  line-height: 1.3;
+}
+
+/* Tooltip arrow */
+.scorecard[data-tooltip]::before {
+  content: "";
+  position: absolute;
+  bottom:12%; /* just below tooltip */
+  left: 50%;
+  transform: translateX(-90%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+}
+
+/* Show tooltip on hover */
+.scorecard[data-tooltip]:hover::after,
+.scorecard[data-tooltip]:hover::before {
+  opacity: 1;
+  transform: translateX(-90%) translateY(-5px); /* slight lift */
 }

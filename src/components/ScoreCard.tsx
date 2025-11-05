@@ -5,14 +5,15 @@ import "./ScoreCard.css";
 interface ScoreCardProps {
   title: string;
   score: number;
+   titleAttr:  string;
 }
 
-const ScoreCard: React.FC<ScoreCardProps> = ({ title, score }) => {
+const ScoreCard: React.FC<ScoreCardProps> = ({ title, score, titleAttr  }) => {
   // dynamically set font size based on title length
-  const fontSize = title.length > 12 ? "0.9rem" : "1.1rem";
+  const fontSize= "1.1rem";
 
   return (
-    <div className="scorecard">
+    <div className="scorecard" data-tooltip={titleAttr}>
       <div
         className="scorecard-title"
         style={{ fontSize }}

@@ -1,3 +1,5 @@
+// Button groups for count and platoon splits, pitch types
+
 import React from "react";
 import "./ButtonGroup.css";
 type CountOption = "All" | "Ahead" | "Behind" | "Even" | "0-0"| "2K" |"3-2";

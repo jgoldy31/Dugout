@@ -1,10 +1,11 @@
+//Central App component
 import { useState, useEffect} from "react";
 import Sidebar from "./components/Sidebar";
 import PlayerProfile from "./components/PlayerProfile";
 import ScoreCard from "./components/ScoreCard";
 import SubTabs from "./components/SubTabs";
 import "./App.css";
-
+import { LOCATIONS_DEF, MOVEMENT_EFFECIENCY_DEF, STUFF_DEF, DELIVERY_CONSISTENCY_DEF } from "./constants/definitions";
 function App() {
   const [selectedName, setSelectedName] = useState("");
   const [dateRange, setDateRange] = useState({ start: "", end: "" });
@@ -16,12 +17,12 @@ function App() {
 
 
 
-
+ //Would be dynamic in a full app 
   const playerPhoto = "/src/images/felix.png";
 
-  // Update score when a player is selected
+  // Update score when a player is selected, this would be pre-computed per player
   useEffect(() => {
-    if (selectedName) setScore(50); // trigger count-up
+    if (selectedName) setScore(50); 
   }, [selectedName]);
 
   return (
@@ -38,7 +39,7 @@ function App() {
       {/* Main content */}
       <div
         style={{
-          marginLeft: effectiveSidebarWidth, // shift content based on sidebar
+          marginLeft: effectiveSidebarWidth, 
           transition: "margin-left 0.3s ease",
           height: "100vh",
           padding: "20px",
@@ -58,7 +59,7 @@ function App() {
           {selectedName ? (
             <PlayerProfile playerPhoto={playerPhoto} playerName={selectedName} />
           ) : (
-            <p>Select a player to begin analysis.</p>
+         <p className="loading-text">Select a player to begin.</p>
           )}
 
           {/* ScoreCards container */}
@@ -73,10 +74,12 @@ function App() {
               gap: "10px",
             }}
           >
-            <ScoreCard title="Delivery Consistency" score={score} />
-            <ScoreCard title="Movement Efficiency" score={score} />
-            <ScoreCard title="Stuff" score={score} />
-            <ScoreCard title="Locations" score={score} />
+
+
+            <ScoreCard title="Delivery Consistency" score={score} titleAttr={DELIVERY_CONSISTENCY_DEF} />
+            <ScoreCard title="Movement Efficiency" score={score} titleAttr={MOVEMENT_EFFECIENCY_DEF} />
+            <ScoreCard title="Stuff" score={score}  titleAttr={STUFF_DEF}/>
+            <ScoreCard title="Locations" score={score} titleAttr={LOCATIONS_DEF}  />
           </div>
         </div>
 
