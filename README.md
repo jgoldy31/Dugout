@@ -25,6 +25,7 @@ Provides basic information of pitcher's mechanics, along with time-series plot a
 - Normalizing release tendencies relative to MLB average.
 - Expanding the set of metrics for time series plots to all applicable metrics
 - Flagging system that automatically informs users of standout changes to mechanics
+- Add Mollweide plots for grips and spin orientation, coupled with 3-D ball graphic
 
 ---
 
