@@ -46,6 +46,7 @@ Using the time-series data provided, allows the user to view the frame-by-frame 
    ```bash
    git clone https://github.com/jgoldy31/Dugout.git
 cd into cloned directory
+
 2. **Install Dependencies**  
 npm install 
 
