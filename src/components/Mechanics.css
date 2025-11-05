@@ -1,0 +1,83 @@
+.checkbox-label-mechanics {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* space between checkbox and text */
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #333;
+  user-select: none;
+  margin-left: 50%;
+  margin-bottom: -40px;
+  font-family: "Outfit", sans-serif;
+}
+
+.checkbox-label-mechanics input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #e54646; /* modern colored checkbox, works in most browsers */
+  cursor: pointer;
+}
+
+
+.select-label {
+  margin-right: 10px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #333;
+  font-family: "Outfit", sans-serif;
+}
+
+.select-input {
+  padding: 5px 10px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: "Outfit", sans-serif;
+}
+
+.select-input:focus {
+  border-color: #e54646; /* focus color */
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+  outline: none;
+}
+
+.metric-select-container {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.metric-select-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.metric-select-label {
+  margin-right: 10px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #333;
+  font-family: "Outfit", sans-serif;
+}
+
+.metric-select-input {
+  padding: 5px 10px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: "Outfit", sans-serif;
+}
+
+.metric-select-input:focus {
+  border-color: #e54646;
+  box-shadow: 0 0 0 2px rgba(210, 33, 33, 0.2);
+  outline: none;
+}
+

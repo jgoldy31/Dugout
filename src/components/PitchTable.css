@@ -1,0 +1,126 @@
+.pitch-table-container {
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 20px;
+  font-family: sans-serif;
+  border-radius: 6px;
+  overflow: hidden; /* ensure sticky header doesn’t overflow */
+}
+
+.pitch-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-family: "Outfit", sans-serif;
+
+}
+
+
+/* Set # column to be smaller */
+.pitch-table th:nth-child(1),
+.pitch-table td:nth-child(1) {
+  width: 8%; 
+}
+
+/* Other columns share remaining width */
+.pitch-table th:nth-child(n+2),
+.pitch-table td:nth-child(n+2) {
+  width: 23%; 
+}
+
+
+/* Header row */
+.pitch-table thead {
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  
+}
+
+.pitch-table th {
+  border-bottom: 2px solid black;
+  border-right: 1px dashed #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.pitch-table th:last-child {
+  border-right: 2px solid black;
+}
+
+.pitch-table th:first-child {
+    border-left: 2px solid black;
+}
+/* Cells */
+.pitch-table td {
+  border-bottom: 1px solid #ccc;
+  border-right: 1px dashed #ccc;
+  padding: 6px;
+  text-align: left;
+    text-align: center;
+}
+
+.pitch-table tr:last-child td {
+  border-bottom: 2px solid black;
+}
+.pitch-table td:last-child {
+  border-right: 2px solid black;
+}
+
+.pitch-table td:first-child {
+    border-left: 2px solid black;
+}
+
+/* Alternating row colors */
+.pitch-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hover and selected row */
+.pitch-table tbody tr:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.selected-row {
+  background-color: #ffe0e0 !important;
+}
+
+/* Selected pitch details */
+.selected-pitch-details {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fafafa;
+}
+
+/* Pagination */
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.pagination-controls button {
+  padding: 5px 12px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.pagination-controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+  background-color: #f0f0f0;
+}
