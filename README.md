@@ -48,7 +48,7 @@ cd into cloned directory
 npm install 
 
 3. **Add in Data (too large for git)**  
-copy provided json files to /Users/jgoldsher/dugout/dugout/src/data
+copy provided json files to dugout/src/data
 
 4. **Run the Code!**
 npm run dev
