@@ -85,9 +85,11 @@ export default function ArsenalOverview({ playerName, startDate, endDate }: Arse
         : {};
 
               return (
-                <div  style={customStyle}>
+                <div key={index} style={customStyle}>
+              
+          
             
-                <div key={type} className="pitch-heatmap-card">
+                <div  className="pitch-heatmap-card">
                   <h3 className="pitch-heatmap-title">
                     <span style={{ color }}>{type}</span>{" "}
                     <span style={{ color: "black" }}>({pitchesOfType.length})</span>

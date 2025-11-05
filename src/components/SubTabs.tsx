@@ -21,6 +21,7 @@ export default function SubTabs({ playerName, startDate, endDate }: SubTabsProps
             playerName={playerName}
             startDate={startDate}
             endDate={endDate}
+            
           />
         );
       case "Mechanics Summary":

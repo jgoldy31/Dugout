@@ -9,7 +9,7 @@ This dashboard is organized into three main tabs, each focusing on a different a
 
 ### 1. Arsenal Overview
 **Description:**  
-Provides a high-level view of a pitcher’s performance history by displaying a summary table, pitch movement chart, and heatmaps depicting the location tencies by pitch type. This tab also allows for quick filtering of count-types and platoon splits.
+Provides a high-level view of a pitcher’s performance history by displaying a summary table, pitch movement chart, and heatmaps depicting the location tencies by pitch type. This tab also allows for quick filtering of count-types and platoon splits. Currently, dummy-data is displayed for Delivery Consistency, Movement Efficiency, Stuff, and Locations. In the future, these could be pre-computed metrics, giving users an immediate high-level understanding of a pitcher's strengths and weaknesses.
 
 **Future Ideas:**  
 - Add additional metrics to summary table (wOBA, HH/BIP, Swing%, Chase%, etc.) 
@@ -25,6 +25,7 @@ Provides basic information of pitcher's mechanics, along with time-series plot a
 - Normalizing release tendencies relative to MLB average.
 - Expanding the set of metrics for time series plots to all applicable metrics
 - Flagging system that automatically informs users of standout changes to mechanics
+- Add Mollweide plots for grips and spin orientation, coupled with 3-D ball graphic
 
 ---
 
@@ -34,6 +35,7 @@ Using the time-series data provided, allows the user to view the frame-by-frame 
 
 **Future Ideas:**  
 - Ability to layer multiple pitches at once
+- Add Markers for Ball Release, Foot Contact, Max External Rotation
 - Using additional data, coupling the time-series data with 3D stick figures.
 
 ---
@@ -48,7 +50,7 @@ cd into cloned directory
 npm install 
 
 3. **Add in Data (too large for git)**  
-copy provided json files to /Users/jgoldsher/dugout/dugout/src/data
+copy provided json files to dugout/src/data
 
 4. **Run the Code!**
 npm run dev

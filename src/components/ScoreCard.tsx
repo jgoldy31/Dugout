@@ -10,7 +10,7 @@ interface ScoreCardProps {
 
 const ScoreCard: React.FC<ScoreCardProps> = ({ title, score, titleAttr  }) => {
   // dynamically set font size based on title length
-  const fontSize= "1.1rem";
+  const fontSize= "1.3rem";
 
   return (
     <div className="scorecard" data-tooltip={titleAttr}>

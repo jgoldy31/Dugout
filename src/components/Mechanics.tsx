@@ -162,7 +162,7 @@ console.log("Unique pitch types:", uniquePitchTypes);
   return (
     <div>
       {!playerName ? (
-        <div style={{ textAlign: "left", fontStyle: "italic", color: "#666" }}>
+        <div className="select-div" style={{ textAlign: "left", fontStyle: "italic", color: "#666" }}>
           Select a player to see mechanics
         </div>
       ) : (

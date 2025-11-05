@@ -4,11 +4,14 @@
   font-weight: 500;
   font-size: 18px;
   display: inline;
+
   padding: 6px 12px;
   border-radius: 12px;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  height: 38px;
+  height: 34px;
+    line-height: 10px;
+  font-family: "Outfit", sans-serif;
 }
 
 .button-group-active {

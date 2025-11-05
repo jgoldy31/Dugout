@@ -6,7 +6,6 @@
 }
 
 
-
 /*Styles for SubTabs component*/
 .analysis-folder {
   display: flex;
@@ -33,6 +32,7 @@
   cursor: pointer;
   border-bottom: 2px solid transparent;
   transition: all 0.2s ease;
+  font-family: "Outfit", sans-serif;
 }
 
 .tab-btn:hover {
@@ -46,7 +46,7 @@
   font-style: italic;
   color: #ff0000;
   font-size: 18px;
-  -webkit-text-stroke: 0.4px black;
+  text-shadow: 0 0 4px rgba(255, 41, 41, 0.3);
 }
 
 .tab-content {
@@ -116,6 +116,7 @@
   text-align: center;
   color: #000000;
   font-style: italic;
+  font-family: "Outfit", sans-serif;
 }
 
 /* No data text */
@@ -156,6 +157,9 @@
    white-space: nowrap;
   overflow: visible;
   text-overflow: unset;
+  line-height:100px;
+  font-family: "Outfit", sans-serif;
+
 
 }
 
